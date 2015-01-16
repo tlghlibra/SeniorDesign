@@ -1,0 +1,39 @@
+To start using Git
+
+Create a github account at github.com
+Download the Git GUI (Graphical User Interface)
+Install the GUI
+  1. Click the plus in the corner
+  2. Choose any name and set the Local Path to somewhere you'll remember (usually in something like school/seniorproject or the like)
+  3. In the top, click on Settings
+  4. Under "Primary Remote Repository" paste https://github.com/tlghlibra/SeniorDesign.git   and make sure you hit Update Remote
+  5. If the files haven't appeared yet (in the Finder/Windows Explorer) then click on "Changes" in the top then click on "Publish" in the top right.
+  6. At this point, you should be up to date with everything.
+
+**************
+At this point you can edit files and do whatever you want. Everything you do is private to you.  When you're ready to push files, go back to the Git application and you should see a list of files that you've changed.
+
+Under the "Changes" tab, fill in a blub in the Summary box, and if you want something in the Description box.  However, keep in mind you MUST fill in something in the Summary box.
+
+When all looks good, click Commit and you should see your commit below under 'Unsynced Commits'.  This is still local to your computer, so when you're all ready, push the Publish button in the top right.  This should sync everything up.
+
+That's all you need to know to do simple file sharing.  There is more you could learn about branching and whatnot, but that's not important right now.
+
+****************
+If you care to learn how to do this in the command line, read on.  Otherwise you're done.  The following is instead of using the GUI.
+
+Make a github account at github.com
+cd into the directory you want to use as the root of the repository and type 'git init'.  This sets up all the data git needs.
+
+Type 'git remote add origin https://github.com/tlghlibra/SeniorDesign.git' to point git at the remote directory.  To ensure it set up correctly, you can type 'git remote -v' and check the output.
+
+If you do a 'git pull origin master' all the data on the server should come down.  Go ahead and 'ls' to see all the files.
+
+Once you're ready to commit and upload, do the following:
+  1. Type 'git status' to see all the files that have been added/changed since the last commit.
+  2. Type 'git add -A' to add all the files in red or 'git add <file>' to add individual files.
+  3. Verify all the files have been added to the "stage" by typing "git status" again.
+  4. When it looks dandy, type "git commit" and a text editor will open.  The first line will be the "Summary" (which, keep in mind, is mandatory) and following lines will be the description.  Save and quit when you've summarized what you've done.
+  5. At this point, you should have a complete commit.  You can again type 'git status' to see that there are no unchanged files.
+  6. To push your changes, DO NOT FORGET to 'git pull origin master' first.  You must make sure the code that's online works with your code before you push yours up.  Then once everything is synced and clean, run 'git push origin master' and your commits will be pushed to remote (origin is the term for remote).
+  7. That should be it
